@@ -21,7 +21,8 @@ const Slider = (
     disableRange,
     disabled,
     onValueChanged,
-    renderThumb,
+    renderLowThumb,
+    renderHighThumb,
     renderLabel,
     renderNotch,
     renderRail,
@@ -98,8 +99,8 @@ const Slider = (
 
   const [labelView, labelUpdate] = useThumbFollower(containerWidthRef, gestureStateRef, renderLabel, isPressed, allowLabelOverflow);
   const [notchView, notchUpdate] = useThumbFollower(containerWidthRef, gestureStateRef, renderNotch, isPressed, allowLabelOverflow);
-  const lowThumb = renderThumb();
-  const highThumb = renderThumb();
+  const lowThumb = renderLowThumb();
+  const highThumb = renderHighThumb();
 
   const labelContainerProps = useLabelContainerProps(floatingLabel);
 
@@ -201,7 +202,8 @@ Slider.propTypes = {
   min: PropTypes.number.isRequired,
   max: PropTypes.number.isRequired,
   step: PropTypes.number.isRequired,
-  renderThumb: PropTypes.func.isRequired,
+  renderLowThumb: PropTypes.func.isRequired,
+  renderHighThumb: PropTypes.func,
   low: PropTypes.number,
   high: PropTypes.number,
   allowLabelOverflow: PropTypes.bool,
