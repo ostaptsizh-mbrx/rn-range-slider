@@ -100,7 +100,7 @@ const Slider = (
   const [labelView, labelUpdate] = useThumbFollower(containerWidthRef, gestureStateRef, renderLabel, isPressed, allowLabelOverflow);
   const [notchView, notchUpdate] = useThumbFollower(containerWidthRef, gestureStateRef, renderNotch, isPressed, allowLabelOverflow);
   const lowThumb = renderLowThumb();
-  const highThumb = renderHighThumb();
+  const highThumb = renderHighThumb && renderHighThumb();
 
   const labelContainerProps = useLabelContainerProps(floatingLabel);
 
