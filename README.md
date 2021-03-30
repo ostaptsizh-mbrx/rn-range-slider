@@ -53,7 +53,8 @@ const handleValueChange = useCallback((low, high) => {
   max={100}
   step={1}
   floatingLabel
-  renderThumb={renderThumb}
+  renderLowThumb={renderThumb}
+  renderHighThumb={renderThumb}
   renderRail={renderRail}
   renderRailSelected={renderRailSelected}
   renderLabel={renderLabel}
@@ -77,7 +78,8 @@ const handleValueChange = useCallback((low, high) => {
 | `disableRange` | Slider works as an ordinary slider with 1 control if `true` | boolean | `false` |
 | `disabled` | Any user interactions will be ignored if `true` | boolean | `false` |
 | `allowLabelOverflow` | If set to `true`, labels are allowed to be drawn outside of slider component's bounds.<br/>Otherwise label's edges will never get out of component's edges. | boolean | `false` |
-| `renderThumb` | Should render the thumb. | `() => Node` | _**required**_ |
+| `renderLowThumb` | Should render the low thumb. | `() => Node` | _**required**_ |
+| `renderHighThumb` | Should render the high thumb. | `() => Node` |
 | `renderRail` | Should render the "rail" for thumbs.<br/>Rendered component **should** have `flex: 1` style so it won't fill up the whole space. | `() => Node` | _**required**_ |
 | `renderRailSelected` | Should render the selected part of "rail" for thumbs.<br/>Rendered component **should not** have `flex: 1` style so it fills up the whole space. | `() => Node` | _**required**_ |
 | `renderLabel` | Should render label above thumbs.<br/>If no function is passed, no label will be drawn. | `(value: number) => Node` | `undefined` |
